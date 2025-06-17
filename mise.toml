@@ -1,0 +1,13 @@
+[tasks.format]
+description = "Format the code"
+run = "qmkfmt keyboards/ymdk/id75/f103/keymaps/id75_azerty_colemak/keymap.c"
+
+[tasks.build]
+description = "Build the keyboard"
+run = "qmk build -kb ymdk/id75/f103 -km id75_azerty_colemak"
+depends = ["format"]
+
+[tasks.flash]
+description = "Flash the keyboard"
+run = "qmk flash -kb ymdk/id75/f103 -km id75_azerty_colemak"
+depends = ["format"]
